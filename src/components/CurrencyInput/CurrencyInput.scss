@@ -1,0 +1,25 @@
+.currency {
+  padding: 20px 20px;
+}
+
+.currency__input {
+  height: 30px;
+  border-radius: 10px 0px 0px 10px;
+  border: 1px solid grey;
+  font-size: 20px;
+  line-height: 18px;
+  padding-left: 5px;
+}
+
+.currency__select {
+  height: 30px;
+  border-radius: 0px 10px 10px 0px;
+  border: 1px solid grey;
+  font-size: 20px;
+}
+
+.header__currency-text {
+  padding: 0px 10px;
+  font-size: 20px;
+  color: white;
+}
