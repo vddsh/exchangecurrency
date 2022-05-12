@@ -11,7 +11,6 @@ function App() {
   const [rates, setRates] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  console.log(rates);
   const filterCurrency = (data) => {
     let filtered = Object.entries(data).filter(([key]) => {
       if (key === 'UAH' || key === 'USD' || key === 'EUR') {
