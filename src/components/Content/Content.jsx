@@ -30,26 +30,34 @@ export const Content = ({ rates }) => {
   };
 
   const handleCurrency2Change = (currency2) => {
-    setAmount1(format((amount2 * rates[currency1]) / rates[currency2]));
+    setAmount2(format((amount1 * rates[currency1]) / rates[currency2]));
     setCurrency2(currency2);
   };
 
   return (
     <div className='content'>
-      <CurrencyInput
-        onAmountChange={handleAmount1Change}
-        onCurrencyChange={handleCurrency1Change}
-        currencies={Object.keys(rates)}
-        amount={amount1}
-        currency={currency1}
-      />
-      <CurrencyInput
-        onAmountChange={handleAmount2Change}
-        onCurrencyChange={handleCurrency2Change}
-        currencies={Object.keys(rates)}
-        amount={amount2}
-        currency={currency2}
-      />
+      <div className='content__inputs-box'>
+        <div>
+          <span className='content__helper'>From</span>
+          <CurrencyInput
+            onAmountChange={handleAmount1Change}
+            onCurrencyChange={handleCurrency1Change}
+            currencies={Object.keys(rates)}
+            amount={amount1}
+            currency={currency1}
+          />
+        </div>
+        <div>
+          <span className='content__helper'>To</span>
+          <CurrencyInput
+            onAmountChange={handleAmount2Change}
+            onCurrencyChange={handleCurrency2Change}
+            currencies={Object.keys(rates)}
+            amount={amount2}
+            currency={currency2}
+          />
+        </div>
+      </div>
     </div>
   );
 };

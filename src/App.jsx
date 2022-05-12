@@ -11,6 +11,7 @@ function App() {
   const [rates, setRates] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  console.log(rates);
   const filterCurrency = (data) => {
     let filtered = Object.entries(data).filter(([key]) => {
       if (key === 'UAH' || key === 'USD' || key === 'EUR') {
@@ -24,9 +25,10 @@ function App() {
     try {
       let res = await axios({
         method: 'get',
-        url: 'https://api.apilayer.com/fixer/latest?',
+        url: 'https://api.apilayer.com/exchangerates_data/latest?',
+
         headers: {
-          apikey: 'mh7KuxWDEmCbJEiC1jcbxkR3mMSURO3w',
+          apikey: 'mTfocxP2tAHfGy3vYMVH2LqFKRbOXJ51',
         },
       });
       setRates(filterCurrency(res.data.rates));
@@ -52,9 +54,12 @@ function App() {
           </div>
         </div>
       ) : (
-        <div className='container'>
-          <Header rates={rates} />
-          <Content rates={rates} />
+        <div className='wrapper'>
+          <img src='main.png' className='image'></img>
+          <div className='container'>
+            <Header rates={rates} />
+            <Content rates={rates} />
+          </div>
         </div>
       )}
     </>

@@ -34,7 +34,6 @@ body {
   font-size: 100%;
   line-height: 1;
   font-size: 14px;
-  background: #b8b8b8;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -85,6 +84,15 @@ h6 {
   margin: 0 auto;
   padding: 0 15px;
   overflow: inherit;
+}
+.wrapper {
+  height: 200px;
+  width: 100%;
+}
+
+.image {
+  height: 400px;
+  width: 100%;
 }
 
 .spinner__container {
